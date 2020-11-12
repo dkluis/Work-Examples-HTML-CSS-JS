@@ -38,11 +38,58 @@
 </ul>
 
 <ul> A list of Front End Demos <br>
-  <li><a href="pages/tvm_demo.html">Demo of a HTML/JS app</a></li>
-  <li><a href="http://srvit.me:5000/">Demo of a React Native app</a></li>
+  <li><a href="pages/tvm_demo.html">Demo of a HTML/JS app using Flask based APIs - in WIP</a></li>
+  <li><a href="http://srvit.me:5000/">Demo of a React Native app - in WIP</a></li>
   <li><a href="pages/bootstrap.html">Demo of a HTML/JS/Bootstrap app</a></li>
   <li><a href="/index.html">This page is a demo of responsive HTML/CSS</a></li>
 </ul>
+
+<details>
+  <summary>Web Server Setup Steps</summary>
+  <dl>
+    <dt>
+    <dd> Create Server on Digital Ocean
+      <ol>
+        <li>Activate Droplet with: Ubuntu 20.4 LTS, 1CPU, 1GB Mem, 25GB SSD</li>
+        <li>Update and upgrade all default packages with "apt update", "apt upgrade" and "apt autoremove"</li>
+      </ol>
+    </dd>
+    <dd> Update DNS provider
+      <ol>
+        <li>Configure the srvit.me domain with the Digital Ocean server IP address</li>
+      </ol>
+    </dd>
+
+    <dd> Get mariaDB ready
+      <ol>
+        <li>Use "apt install" to install mariaDB</li>
+        <li>Secure mariaDB and setup Users</li>
+        <li>Upload TVMazeDB dump to DO with SFTP</li>
+        <li>Restore dump into mariaDB</li>
+        <li>Secure mariaDB to only have localhost access</li>
+      </ol>
+    </dd>
+    <dd> Get Python ready
+      <ol>
+        <li>Use "apt update" to upgrade Python to 3.8.5</li>
+        <li>Use "apt install" to install mariaDB dev options</li>
+        <li>Use "pip3 install" to add mariadb python library</li>
+        <li>Use "pip3 install" to add flask, pandas, cors, and other libraries used in the demo apps</li>
+        <li>Use "pip3 install" to add Gunicorn to use as the webserver for the Flask based APIs</li>
+        <li>Create gunicorn service info to be able to start gunicorn as a service</li>
+        <li>Use "systemctl" to start and enable the gunicorn service</li>
+      </ol>
+    </dd>
+    <dd> Get Apache2 ready
+      <ol>
+        <li>Use "apt install" to install apache2</li>
+        <li>Secure Apache2</li>
+        <li>Edit the apache config to reflect the ServerName, etc.</li>
+      </ol>
+    </dd>
+  </dl>
+</details>
+
 
 <script src="js/vendor/modernizr-3.11.2.min.js"></script>
 <script src="js/plugins.js"></script>
