@@ -6,29 +6,61 @@
   <title>Work Examples - Dick Kluis</title>
   <meta content="Introduction of DK's capabilities and knowledge" name="description">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-
   <link href="icon.png" rel="apple-touch-icon">
   <!-- Place favicon.ico in the root directory -->
-
   <link href="css/normalize.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
-
   <meta content="#fafafa" name="theme-color">
+
+  <style>
+
+    .heading {
+      font-weight: bold;
+      line-height: 2em;
+    }
+
+    details {
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      padding: .5em .5em 0;
+    }
+
+    summary {
+      font-weight: bold;
+      margin: -.5em -.5em 0;
+      padding: .5em;
+    }
+
+    details[open] {
+      padding: .5em;
+    }
+
+    details[open] summary {
+      border-bottom: 1px solid #aaa;
+      margin-bottom: .5em;
+    }
+
+  </style>
+
 </head>
 
 <body>
 
-<h1>Home Page for the Work Examples website of Dick Kluis</h1>
+<h1>Home Page for the Work Examples website</h1>
 
 <p><em>This is still completely a Work In Progress and is receiving updates continuously. <br>
-  Currently only working on the concepts without considering CSS for decorations</em></p>
+  Currently only working on the concepts without considering CSS for decorations <br> <br>
+  Disclaimer: I am not a designer and am focussed a functional quality code. <br>
+  Promise: I am able, when given a design to implement it pixel perfect <br> <br>
+  <strong>Internet Explorer is not supported</strong>
+</em></p>
 
-<h2>
+<h3>
   Intro Video <br>
   <video controls="controls" height=221px src="../resources/DickKluis-Developer-Intro.mp4" width=350px>
     Your browser does not support the HTML5 Video element.
   </video>
-</h2>
+</h3>
 
 <ul> A list of Back End Demos <br>
   <li><a href="pages/flask.html">Demo of Python/Flask based APIs</a></li>
@@ -41,26 +73,26 @@
   <li><a href="pages/tvm_demo.html">Demo of a HTML/JS app using Flask based APIs - in WIP</a></li>
   <li><a href="http://srvit.me:5000/">Demo of a React Native app - in WIP</a></li>
   <li><a href="pages/bootstrap.html">Demo of a HTML/JS/Bootstrap app</a></li>
-  <li><a href="/index.html">This page is a demo of responsive HTML/CSS</a></li>
+  <li><a href="/index.html">This page is a demo of responsive HTML/CSS (no JS)</a></li>
 </ul>
 
-<details>
-  <summary>Web Server Setup Steps</summary>
+<details id="wss">
+  <summary>Web Server Setup</summary>
   <dl>
     <dt>
-    <dd> Create Server on Digital Ocean
+    <dd><span class="heading">Create Server on Digital Ocean</span>
       <ol>
-        <li>Activate Droplet with: Ubuntu 20.4 LTS, 1CPU, 1GB Mem, 25GB SSD</li>
+        <li>Activate Droplet with: Ubuntu 20.4 LTS, 1 CPU, 1 GB Mem, 25 GB SSD</li>
         <li>Update and upgrade all default packages with "apt update", "apt upgrade" and "apt autoremove"</li>
       </ol>
     </dd>
-    <dd> Update DNS provider
+    <dd><span class="heading">Update DNS provider</span>
       <ol>
-        <li>Configure the srvit.me domain with the Digital Ocean server IP address</li>
+        <li>Configure the srvit.me domain dns with the Digital Ocean server IP address</li>
       </ol>
     </dd>
 
-    <dd> Get mariaDB ready
+    <dd><span class="heading">Get mariaDB ready</span>
       <ol>
         <li>Use "apt install" to install mariaDB</li>
         <li>Secure mariaDB and setup Users</li>
@@ -69,7 +101,7 @@
         <li>Secure mariaDB to only have localhost access</li>
       </ol>
     </dd>
-    <dd> Get Python ready
+    <dd><span class="heading">Get Python ready</span>
       <ol>
         <li>Use "apt update" to upgrade Python to 3.8.5</li>
         <li>Use "apt install" to install mariaDB dev options</li>
@@ -80,11 +112,76 @@
         <li>Use "systemctl" to start and enable the gunicorn service</li>
       </ol>
     </dd>
-    <dd> Get Apache2 ready
+    <dd><span class="heading">Get Apache2 ready</span>
       <ol>
         <li>Use "apt install" to install apache2</li>
         <li>Secure Apache2</li>
         <li>Edit the apache config to reflect the ServerName, etc.</li>
+      </ol>
+    </dd>
+  </dl>
+</details>
+
+<details id="dt">
+  <summary>Development Tools</summary>
+  <dl>
+    <dd><span class="heading">System </span>
+      <ol>
+        <li>Mac Mini: 12 Core CPU, 64 MB Mem, 1 TB SSD, 30 TB RAID-5 HD</li>
+        <li>macOS Catalina</li>
+        <li>Home Network fully on VPN</li>
+        <li>Internet Speed: 75Mbps, up and down</li>
+      </ol>
+    </dd>
+    <dd><span class="heading">Pycharm (IDE)</span>
+      <ol>
+        <li>Pycharm supports all languages and tools used in these work examples:</li>
+        <ol type="a">
+          <li>Python3</li>
+          <li>HTML/CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Flask</li>
+          <li>MariaDB</li>
+        </ol>
+        <li>Pycharm integrates with:</li>
+        <ol type="A">
+          <li>GitHub for automatic updates on commits</li>
+          <li>SFTP for automatic deployment</li>
+        </ol>
+      </ol>
+    </dd>
+    <dd><span class="heading">DBeaver</span>
+      <ol>
+        <li>DBeaver is an open and free DB Management tool</li>
+        <li>Support pretty much all DB providers</li>
+        <li>The work examples only use mariaDB</li>
+      </ol>
+    </dd>
+    <dd><span class="heading">Transmit</span>
+      <ol>
+        <li>Transmit is a SFTP Manager</li>
+        <li>Using rsa keys for security</li>
+        <li>Automates repeating tasks</li>
+      </ol>
+    </dd>
+        <dd><span class="heading">Parallels</span>
+      <ol>
+        <li>Windows 10</li>
+        <li>Visual Studio Pro</li>
+      </ol>
+    </dd>
+  </dl>
+</details>
+
+<details id="git">
+  <summary>Github Repositories</summary>
+  <dl>
+    <dd><span class="heading">Multiple Repositories Used: </span>
+      <ol>
+        <li>HTML/CSS/JavaScript Examples</li>
+        <li>React Example</li>
+        <li>Python Examples</li>
       </ol>
     </dd>
   </dl>
