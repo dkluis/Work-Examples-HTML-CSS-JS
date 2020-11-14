@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>The Drinking Game</title>
+  <meta content="Place Holder for The Drinking Game development" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <script>
+
+    function get_an_experience(_race) {
+      const experiences = [
+        'Wizard',
+        'Summoner',
+        'Warlock',
+        'Knight',
+        'Rogue',
+        'Cleric',
+        'Monk',
+        'Paladin',
+        'Ranger',
+        'Hedge Witch',
+        'Black Smith',
+        'Engineer',
+        'Hunter'
+      ]
+
+      for (let ind = 0; ind < experiences.length; ind++) {
+        if (_race == 'Human' && experiences[ind] != 'Wizard') {
+          return experiences[ind]
+        } else {
+          if (_race == 'Orc' && experiences[ind] != 'Summoner') {
+            return experiences[ind]
+          } else {
+            if (_race == 'Elf' && experiences[ind] != 'Warlock') {
+              return experiences[ind]
+            }
+          }
+        }
+      }
+      return 'Unknown Experience'
+    }
+
+    class races {
+      constructor() {
+        this.all =
+          [
+            "Human",
+            "Orc",
+            "Elf",
+            'Troll',
+            'Giant',
+            'Orc',
+            'Fairy',
+            'Were Creature',
+            'Vampire',
+            'Dragon Kin',
+            'Centaur',
+            'Golem',
+            'Goblin'
+          ]
+      }
+
+      get_random() {
+        let ind = Math.floor(Math.random() * this.all.length)
+        return this.all[ind]
+      }
+
+      does_exist(_race) {
+        for (let ind = 0; ind < this.all.length; ind++) {
+          if (this.all[ind] == _race) {
+            return true
+          }
+        }
+        return false
+      }
+    }
+
+    class Person {
+      // public properties
+      name
+      id
+      race
+      experience
+      points
+
+      constructor(_name, _race = false) {
+        this.name = _name
+        this.id = Math.floor(Math.random() * 1000)
+        const tmp_races = new races()
+        if (!_race) {
+          this.race = tmp_races.get_random()
+        } else {
+          if (tmp_races.does_exist(_race)) {
+            this.race = _race
+          } else {
+            this.race = 'Unknown Race'
+          }
+        }
+        this.experience = get_an_experience(this.race)
+        this.points = 10
+      }
+    }
+
+    let persons = []
+    persons.push(new Person('A'))
+    persons.push(new Person('B'))
+
+    function show_persons() {
+      for (let person in persons) {
+        console.log(persons[person])
+      }
+    }
+
+    show_persons()
+
+  </script>
+
+</head>
+
+<body>
+
+<!-- Add your site or application content here -->
+<h1>The Drinking Game<br><br>Use developer console to test the code or a play a game </h1>
+
+<p>to add a player:  persons.push(new Person('A Name'))</p>
+<p>to view all players all info:  show_persons() </p>
+
+
+</body>
+
+</html>
