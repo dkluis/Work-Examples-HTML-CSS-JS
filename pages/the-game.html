@@ -39,7 +39,8 @@
           }
         }
       }
-      return 'Unknown Experience'
+      const random_ind = Math.floor(Math.random() * experiences.length)
+      return experiences[random_ind]
     }
 
     class races {
@@ -124,8 +125,71 @@
 <!-- Add your site or application content here -->
 <h1>The Drinking Game<br><br>Use developer console to test the code or a play a game </h1>
 
-<p>to add a player:  persons.push(new Person('A Name'))</p>
-<p>to view all players all info:  show_persons() </p>
+
+<p>to add a player: persons.push(new Person('A Name'))</p>
+<p>to view all players all info: show_persons() </p>
+
+<details id="Game Console">
+  <summary>Game Console</summary>
+  <dl>
+    <dd><span class="heading">Console Commands: </span>
+      <ol>
+        <li><em>persons.push(new Person('A Name'))</em> -> Adds a new player to list</li>
+        <br>
+        <li><em>show_persons()</em> -> Lists all the players in the game</li>
+      </ol>
+    </dd>
+    <dd><span class="heading">Notes</span>
+      <ol>
+        <li>persons is a list of player which the call Persons randomly assign a Race to a player<br>
+          You have to give it a Name<br>
+          You can optionally assign it an experiences as well<br>
+          <em>persons.push(new Person('A Name', 'have to exist experience'))</em><br>
+          The <em>push.persons() command put the new player into the persons list of players</em>
+        </li>
+        <br>
+        <li><em>show_persons()</em> -> Lists all the player that are the list and thus in the game</li>
+      </ol>
+    </dd>
+    <dd><span class="heading">Data</span>
+      <ol>
+        <li>Races</li>
+        <ol type="a">
+          <li>"Human"</li>
+          <li>"Orc"</li>
+          <li>"Elf"</li>
+          <li>'Troll'</li>
+          <li>'Giant'</li>
+          <li>'Orc'</li>
+          <li>'Fairy'</li>
+          <li>'Were Creature'</li>
+          <li>'Vampire'</li>
+          <li>'Dragon Kin'</li>
+          <li>'Centaur'</li>
+          <li>'Golem'</li>
+          <li>'Goblin</li>
+        </ol>
+        <br>
+        <li>Experiences</li>
+        <ol type="a">
+          <li>'Wizard'</li>
+          <li>'Summoner'</li>
+          <li>'Warlock'</li>
+          <li>'Knight'</li>
+          <li>'Rogue'</li>
+          <li>'Cleric'</li>
+          <li>'Monk'</li>
+          <li>'Paladin'</li>
+          <li>'Ranger'</li>
+          <li>'Hedge Witch'</li>
+          <li>'Black Smith'</li>
+          <li>'Engineer'</li>
+          <li>'Hunter</li>
+        </ol>
+      </ol>
+    </dd>
+  </dl>
+</details>
 
 
 </body>
