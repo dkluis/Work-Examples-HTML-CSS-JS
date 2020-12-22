@@ -19,10 +19,8 @@
     }
 
     body {
-      max-width: 595px;
-      min-width: 595px;
       margin: auto;
-      background:  floralwhite;
+      background: floralwhite;
     }
 
     video {
@@ -38,10 +36,10 @@
 
     .wrapper {
       display: grid;
-      grid-auto-columns: 60%;
       grid-auto-flow: row;
       grid-gap: 5px;
-      justify-content: center;
+      margin: auto;
+      width: 400px;
     }
 
     .wrapper > ul {
@@ -59,8 +57,10 @@
 
     details {
       border: 1px solid #54FFD5;
-      border-radius: 4px;
+      border-radius: 8px;
       padding: .5em .5em 0;
+      margin: auto;
+      width: 592px;
     }
 
     summary {
@@ -82,32 +82,49 @@
       text-align: center;
     }
 
+    @media only screen and (max-width: 594px) {
+      * {
+        transform: scale(.970, .970)
+      }
+
+      video {
+        height: 250px;
+      }
+
+      details {
+        margin: 3px;
+        width: 450px;
+      }
+    }
+
   </style>
 
 </head>
 
 <body>
 
+
 <h1>Portfolio of coding examples - Dick Kluis</h1>
 
-<p class="intro"><em>Disclaimer: I am not a designer. I am focussed functional quality code. <br>
-  Promise: I am able, when given a design to implement it pixel perfect <br> <br>
+<p class="intro"><em><strong>Disclaimer</strong>:<br> I am not a designer. I am focussed functional quality code. <br>
+  <strong>Promise:</strong><br> I am able, when given a design to implement it pixel perfect <br> <br>
 </em></p>
 
 <h3>Intro - Who Am I</h3>
-<video controls="controls" height=320px src="../resources/DickKluis-Developer-Intro.mp4">
+<video controls="controls" height=320px src="../resources/DickKluis-Developer-Intro.mp4"
+       poster="../resources/whoami.png">
   Your browser does not support the HTML5 Video element.
 </video>
 <br><br>
 
 <div class="wrapper">
-  <ul><span class="ul_head"> Back-end Examples </span><br>
+  <ul><span class="ul_head"> Back-end Examples </span>
     <li><a href="pages/flask.html">Python/Flask based APIs</a></li>
     <li><a href="pages/python_ui.html">Python UI</a></li>
     <li><a href="pages/python_classes.html">Python Classes</a></li>
   </ul>
 
-  <ul><span class="ul_head"> Front-end Examples  </span><br>
+  <ul><span class="ul_head"> Front-end Examples  </span>
     <li><a href="pages/tvm_demo.html">HTML/JS app above back-end APIs</a></li>
     <li><a href="http://srvit.me:5000/">React app using above back-end APIs</a></li>
   </ul>
@@ -184,7 +201,7 @@
           <li>MariaDB</li>
         </ol>
         <li>Pycharm integrates with:</li>
-        <ol type="A">
+        <ol type="a">
           <li>GitHub for automatic updates on commits</li>
           <li>SFTP for automatic deployment</li>
         </ol>
