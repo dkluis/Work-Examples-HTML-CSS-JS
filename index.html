@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Work Examples - Dick Kluis</title>
+  <title>Coding Examples - Dick Kluis</title>
   <meta content="Introduction of DK's capabilities and knowledge" name="description">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="icon.png" rel="apple-touch-icon">
@@ -14,13 +14,51 @@
 
   <style>
 
-    .heading {
+    h1, h3, .intro {
+      text-align: center;
+    }
+
+    body {
+      max-width: 595px;
+      min-width: 595px;
+      margin: auto;
+      background:  floralwhite;
+    }
+
+    video {
+      display: block;
+      margin: 0 auto;
+      border-radius: 25px;
+    }
+
+    .ol-heading {
       font-weight: bold;
       line-height: 2em;
     }
 
+    .wrapper {
+      display: grid;
+      grid-auto-columns: 60%;
+      grid-auto-flow: row;
+      grid-gap: 5px;
+      justify-content: center;
+    }
+
+    .wrapper > ul {
+      background: #54FFD5;
+      border-radius: 25px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+
+    .ul_head {
+      font-size: larger;
+      font-weight: bold;
+      padding-bottom: 3px;
+    }
+
     details {
-      border: 1px solid #aaa;
+      border: 1px solid #54FFD5;
       border-radius: 4px;
       padding: .5em .5em 0;
     }
@@ -36,8 +74,12 @@
     }
 
     details[open] summary {
-      border-bottom: 1px solid #aaa;
+      border-bottom: 1px solid #54FFD5;
       margin-bottom: .5em;
+    }
+
+    #IE {
+      text-align: center;
     }
 
   </style>
@@ -46,53 +88,50 @@
 
 <body>
 
-<h1>Home Page for the Work Examples website</h1>
+<h1>Portfolio of coding examples - Dick Kluis</h1>
 
-<p><em>This is still completely a Work In Progress and is receiving updates continuously. <br>
-  Currently only working on the concepts without considering CSS for decorations <br> <br>
-  Disclaimer: I am not a designer and am focussed a functional quality code. <br>
+<p class="intro"><em>Disclaimer: I am not a designer. I am focussed functional quality code. <br>
   Promise: I am able, when given a design to implement it pixel perfect <br> <br>
-  <strong>Internet Explorer is not supported</strong>
 </em></p>
 
-<h3>
-  Intro Video <br>
-  <video controls="controls" height=221px src="../resources/DickKluis-Developer-Intro.mp4" width=350px>
-    Your browser does not support the HTML5 Video element.
-  </video>
-</h3>
+<h3>Intro - Who Am I</h3>
+<video controls="controls" height=320px src="../resources/DickKluis-Developer-Intro.mp4">
+  Your browser does not support the HTML5 Video element.
+</video>
+<br><br>
 
-<ul> A list of Back End Demos <br>
-  <li><a href="pages/flask.html">Demo of Python/Flask based APIs</a></li>
-  <li><a href="pages/nodejs.html">Demo of NodeJS based APIs</a></li>
-  <li><a href="pages/python_ui.html">Demo video of Python with UI</a></li>
-  <li><a href="pages/python_cli.html">Demo video of Python app with CLI</a></li>
-</ul>
+<div class="wrapper">
+  <ul><span class="ul_head"> Back-end Examples </span><br>
+    <li><a href="pages/flask.html">Python/Flask based APIs</a></li>
+    <li><a href="pages/python_ui.html">Python UI</a></li>
+    <li><a href="pages/python_classes.html">Python Classes</a></li>
+  </ul>
 
-<ul> A list of Front End Demos <br>
-  <li><a href="pages/tvm_demo.html">Demo of a HTML/JS app using Flask based APIs - in WIP</a></li>
-  <li><a href="http://srvit.me:5000/">Demo of a React app - in WIP</a></li>
-  <li><a href="pages/bootstrap.html">Demo of a HTML/JS/Bootstrap app</a></li>
-  <li><a href="/index.html">This page is a demo of responsive HTML/CSS (no JS)</a></li>
-</ul>
+  <ul><span class="ul_head"> Front-end Examples  </span><br>
+    <li><a href="pages/tvm_demo.html">HTML/JS app above back-end APIs</a></li>
+    <li><a href="http://srvit.me:5000/">React app using above back-end APIs</a></li>
+  </ul>
+</div>
+
+<br>
 
 <details id="wss">
   <summary>Web Server Setup</summary>
   <dl>
     <dt>
-    <dd><span class="heading">Create Server on Digital Ocean</span>
+    <dd><span class="ol-heading">Create Server on Digital Ocean</span>
       <ol>
         <li>Activate Droplet with: Ubuntu 20.4 LTS, 1 CPU, 1 GB Mem, 25 GB SSD</li>
         <li>Update and upgrade all default packages with "apt update", "apt upgrade" and "apt autoremove"</li>
       </ol>
     </dd>
-    <dd><span class="heading">Update DNS provider</span>
+    <dd><span class="ol-heading">Update DNS provider</span>
       <ol>
         <li>Configure the srvit.me domain dns with the Digital Ocean server IP address</li>
       </ol>
     </dd>
 
-    <dd><span class="heading">Get mariaDB ready</span>
+    <dd><span class="ol-heading">Get mariaDB ready</span>
       <ol>
         <li>Use "apt install" to install mariaDB</li>
         <li>Secure mariaDB and setup Users</li>
@@ -101,7 +140,7 @@
         <li>Secure mariaDB to only have localhost access</li>
       </ol>
     </dd>
-    <dd><span class="heading">Get Python ready</span>
+    <dd><span class="ol-heading">Get Python ready</span>
       <ol>
         <li>Use "apt update" to upgrade Python to 3.8.5</li>
         <li>Use "apt install" to install mariaDB dev options</li>
@@ -112,7 +151,7 @@
         <li>Use "systemctl" to start and enable the gunicorn service</li>
       </ol>
     </dd>
-    <dd><span class="heading">Get Apache2 ready</span>
+    <dd><span class="ol-heading">Get Apache2 ready</span>
       <ol>
         <li>Use "apt install" to install apache2</li>
         <li>Secure Apache2</li>
@@ -125,7 +164,7 @@
 <details id="dt">
   <summary>Development Tools</summary>
   <dl>
-    <dd><span class="heading">System </span>
+    <dd><span class="ol-heading">System </span>
       <ol>
         <li>Mac Mini: 12 Core CPU, 64 MB Mem, 1 TB SSD, 30 TB RAID-5 HD</li>
         <li>macOS Catalina</li>
@@ -133,7 +172,7 @@
         <li>Internet Speed: 75Mbps, up and down</li>
       </ol>
     </dd>
-    <dd><span class="heading">Pycharm (IDE)</span>
+    <dd><span class="ol-heading">Pycharm (IDE)</span>
       <ol>
         <li>Pycharm supports all languages and tools used in these work examples:</li>
         <ol type="a">
@@ -151,21 +190,21 @@
         </ol>
       </ol>
     </dd>
-    <dd><span class="heading">DBeaver</span>
+    <dd><span class="ol-heading">DBeaver</span>
       <ol>
         <li>DBeaver is an open and free DB Management tool</li>
         <li>Support pretty much all DB providers</li>
         <li>The work examples only use mariaDB</li>
       </ol>
     </dd>
-    <dd><span class="heading">Transmit</span>
+    <dd><span class="ol-heading">Transmit</span>
       <ol>
         <li>Transmit is a SFTP Manager</li>
         <li>Using rsa keys for security</li>
         <li>Automates repeating tasks</li>
       </ol>
     </dd>
-        <dd><span class="heading">Parallels</span>
+    <dd><span class="ol-heading">Parallels</span>
       <ol>
         <li>Windows 10</li>
         <li>Visual Studio Pro</li>
@@ -177,15 +216,19 @@
 <details id="git">
   <summary>Github Repositories</summary>
   <dl>
-    <dd><span class="heading">Multiple Repositories Used: </span>
+    <dd><span class="ol-heading">Multiple Repositories Used: </span>
       <ol>
-        <li>HTML/CSS/JavaScript Examples <a href="https://github.com/dkluis/Work-Examples-HTML-CSS-JS" target="_blank"> Click me</a> </li>
-        <li>React Example <a href="https://github.com/dkluis/Work-Examples-React" target="_blank"> Click me</a> </li>
-        <li>Python Examples <a href="https://github.com/dkluis/Work-Examples-Python-APIs-UI-CLI" target="_blank"> Click me</a> </li>
+        <li>HTML/CSS/JavaScript Examples <a href="https://github.com/dkluis/Work-Examples-HTML-CSS-JS" target="_blank">
+          Click me</a></li>
+        <li>React Example <a href="https://github.com/dkluis/Work-Examples-React" target="_blank"> Click me</a></li>
+        <li>Python Examples <a href="https://github.com/dkluis/Work-Examples-Python-APIs-UI-CLI" target="_blank"> Click
+          me</a></li>
       </ol>
     </dd>
   </dl>
 </details>
+
+<p id="IE"><br><strong>Internet Explorer is not supported on this website</strong></p>
 
 <script src="js/vendor/modernizr-3.11.2.min.js"></script>
 <script src="js/plugins.js"></script>
